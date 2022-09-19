@@ -16,6 +16,14 @@ This repository hosts an open source implementation.
  * Print shares, generated to ```/tmp``` directory.
  * Place printed shares one on top of the other, hold agains a light source.
 
+## Known Bugs
+
+ * Black / white in stacked images is inverted.
+
+## License
+
+[MIT](LICENSE)
+
 ## Author
 
 Maximilian Schiedermeier, 2018  
