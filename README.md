@@ -2,6 +2,10 @@
 
 Visual XOR based encryption with random one time pads.
 
+![version](https://img.shields.io/badge/version-1.1-brightgreen)
+![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![building](https://img.shields.io/badge/build-passing-brightgreen)
+
 ## About
 
 [Visual Cryptography](https://en.wikipedia.org/wiki/Visual_cryptography) is an approach to split information over image shares, where:
