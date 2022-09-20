@@ -27,7 +27,7 @@ public class Launcher {
     final File targetDir = extractTargetDir(args);
 
     // load image as binary array
-    boolean[][] inputImageBinary = BinaryImageLoader.loadImage(args[0]);
+    boolean[][] inputImageBinary = BinaryImageLoader.loadImage(new File(args[0]));
     System.out.println("Image imported. Detected size: " + inputImageBinary.length);
 
     // create a random one time pad of same size, also as boolean 2D array
@@ -38,7 +38,7 @@ public class Launcher {
     // create XOR-ed outcome of input_image and one_time_pad
     // Idea: white pixels in original image require identical booleans in both shares. Black pixels
     // require complementary pixels.
-    boolean[][] secondShare = BoolArrayXorer.weave(inputImageBinary, oneTimePad);
+    boolean[][] secondShare = new LogicalXorer().combine(inputImageBinary, oneTimePad);
     System.out.println("Second share created.");
 
     // convert the compact boolean-shares to double sized visual shares

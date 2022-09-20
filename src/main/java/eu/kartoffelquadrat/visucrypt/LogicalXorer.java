@@ -13,7 +13,7 @@ package eu.kartoffelquadrat.visucrypt;
  * Utils class with a single util method that applies the XOR operation on all binary pixel values
  * of a secret image and a provided one time pad.
  */
-public class BoolArrayXorer {
+public class LogicalXorer implements Xorer {
 
   /**
    * Creates a new 2D bool array of identical dimensions as provided image and one time pad, which
@@ -24,7 +24,7 @@ public class BoolArrayXorer {
    * @param oneTimePad bool 2D array encoding a one time pad of equal dimensions as original image.
    * @return new 2d bool array representing second visual share.
    */
-  public static boolean[][] weave(boolean[][] original, boolean[][] oneTimePad) {
+  public boolean[][] combine(boolean[][] original, boolean[][] oneTimePad) {
 
     // Prepare output array of same dimensions
     boolean[][] result = new boolean[original.length][original[0].length];
