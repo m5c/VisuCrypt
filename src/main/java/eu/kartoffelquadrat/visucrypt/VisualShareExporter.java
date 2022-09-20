@@ -22,9 +22,11 @@ public class VisualShareExporter {
    * Transforms provided visual shares back to png format and persists them on disk.
    *
    * @param visualShare as the boosted, graphic version of a compact share.
-   * @param path        as the location on file system where the share is stored as png file.
+   * @param outputDir   as the location on file system where the share is stored as png file.
+   * @param fileName    as the  name on disk to use for the persisted file.
    */
-  public static void exportVisualShare(boolean[][] visualShare, String path) {
+  public static void exportVisualShare(boolean[][] visualShare, File outputDir, String fileName,
+                                       String imageFormat) {
 
     // set final dimensions
     BufferedImage bufferedImage =
@@ -40,8 +42,9 @@ public class VisualShareExporter {
 
     // Finally write Buffered Image to file
     try {
-      File outputfile = new File(path);
-      ImageIO.write(bufferedImage, "png", outputfile);
+      File outputFile = new File(outputDir.getAbsolutePath() + "/" + fileName + "."
+          + imageFormat);
+      ImageIO.write(bufferedImage, imageFormat, outputFile);
     } catch (IOException e) {
       System.out.println("Export Failed!");
     }

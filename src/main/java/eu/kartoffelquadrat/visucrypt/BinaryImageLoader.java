@@ -27,16 +27,11 @@ public class BinaryImageLoader {
    * @param imagePath as string describing the resource location. Can be absolute or relative.
    * @return 2D boolean array representing the images max-contrast grid, all pixels black/white.
    */
-  public static boolean[][] loadImage(String imagePath) {
+  public static boolean[][] loadImage(String imagePath) throws IOException {
 
     //try to load image
     System.out.println("Trying to import from filesystem: " + imagePath);
-    BufferedImage img = null;
-    try {
-      img = ImageIO.read(new File(imagePath));
-    } catch (IOException e) {
-      System.out.println("File could not be loaded. Aborting.");
-    }
+    BufferedImage img = ImageIO.read(new File(imagePath));
 
     // convert content of image into boolean 2D array
     boolean[][] binaryImage = new boolean[img.getWidth()][img.getHeight()];

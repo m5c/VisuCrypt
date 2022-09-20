@@ -19,7 +19,7 @@ See [JavaDoc on GitHub pages](https://kartoffelquadrat.github.io/VisuCrypt/).
  * Run the program: ```java -jar target/VisuCrypt.jar path/to/source/image.jpg``` or  
  ```mvn clean package exec:java -Dexec.args=path/to/source/image.jpg```
  * Print shares, generated to ```/tmp``` directory.
- * Place printed shares one on top of the other, hold agains a light source.
+ * Place printed shares one on top of the other, hold against a light source.
 
 ## License
 
@@ -27,5 +27,5 @@ See [JavaDoc on GitHub pages](https://kartoffelquadrat.github.io/VisuCrypt/).
 
 ## Author
 
-Maximilian Schiedermeier, 2018  
+Maximilian Schiedermeier, 2018 - 2022  
 At the time employed at [INSA Lyon, LIRIS Labs](https://liris.cnrs.fr/page-membre/maximilian-schiedermeier).
