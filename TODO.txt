@@ -1,5 +1,5 @@
 Fix black white inversion bug
-Store output image in same dir as input image
+Store output image in same dir as input image, or better, allow optional specification of target dir
 Generate printable PDF with maximized png images in addition to individual files.
 One Time Pad generator is wasteful, creates random byte but then only takes first position as random value.
 Create new class for bool[][] images. Make it clear in comment that the visual pattern is not yet encoded by this class, only the entropy is captured by shares / original image, not the actual diagonal patterns.

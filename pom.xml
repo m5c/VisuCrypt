@@ -49,6 +49,16 @@
 
         <plugins>
 
+            <!-- Specifically tell compiler to use same language level as set in properties -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+
             <!-- Plugin to refuse build in case of checkstyle violations-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
