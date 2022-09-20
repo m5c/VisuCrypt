@@ -14,6 +14,22 @@ Visual XOR based encryption with random one time pads.
  
 This repository hosts an open source implementation.
 
+## Illustration
+
+Imagine a [2x2 test image](src/test/resources/test-image.png):  
+![test-image](src/test/resources/test-image.png)
+
+Running this library will create a random one time pad and apply it to the test image. This results in two more images, which serve as secret shares:
+
+ * [Image 1: Stems from the One-Time-Pad](markdown-samples/sample-share1.png):  
+ ![share1](markdown-samples/sample-share1.png)
+ * [Image 2: Stems from the XOR combination of test image and One-Time-Pad](markdown-samples/sample-share2.png):  
+ ![share2](markdown-samples/sample-share2.png)
+ 
+ The logical NOR operation of above shares (which corresponds to visual XOR, because the human eye interprets dithered areas as brighter) results in a [visual decryption of the original image (secret)](markdown-samples/overlay.png):  
+ ![overlay](markdown-samples/overlay.png)
+
+
 ## Documentation
 
 See [JavaDoc on GitHub pages](https://kartoffelquadrat.github.io/VisuCrypt/).
