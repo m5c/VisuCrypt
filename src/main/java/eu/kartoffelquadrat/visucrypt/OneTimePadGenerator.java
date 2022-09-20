@@ -29,6 +29,7 @@ public class OneTimePadGenerator {
     // For each line. create as many random bytes as the line has elements
     for (int y = 0; y < height; y++) {
       for (int x = 0; x < width; x++) {
+        
         // get a random boolean
         byte[] bytes = new byte[1];
         random.nextBytes(bytes);
