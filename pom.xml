@@ -6,15 +6,14 @@
 
     <groupId>eu.kartoffelquadrat</groupId>
     <artifactId>visucrypt</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1</version>
+    <name>VisuCrypt</name>
+    <description>A simple visual cryptography implementation.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <source>8</source>
+        <java.version>11</java.version>
     </properties>
-
 
     <!-- main developer -->
     <developers>
@@ -35,11 +34,65 @@
         </license>
     </licenses>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <!-- Override default name of generated jars -->
         <finalName>VisuCrypt</finalName>
 
         <plugins>
+
+            <!-- Plugin to refuse build in case of checkstyle violations-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <violationSeverity>warning</violationSeverity>
+                    <failOnViolation>true</failOnViolation>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- add docs -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <reportOutputDirectory>${project.reporting.outputDirectory}/docs
+                    </reportOutputDirectory>
+                    <destDir>docs</destDir>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
 
             <!-- Specify main class for exec goal -->
             <plugin>
