@@ -9,12 +9,17 @@ package eu.kartoffelquadrat.visucrypt;
 import java.security.SecureRandom;
 
 /**
- * Creates 2D one time pads of desired dimensions.
+ * Creates random 2D boolean arrays which can be used as one time pads.
  */
 public class OneTimePadGenerator {
 
   /**
-   * Random one time pad generator. Creates 2D one time pads of desired dimensions.
+   * Creates random 2D boolean arrays of desired dimension. Every position is extracted from an
+   * individual random byte by stripping it to the first bit position.
+   *
+   * @param width  as desired x dimensions of produced 2D array
+   * @param height as desired y dimensions of produced 2D array
+   * @return n2D boolean array of desired dimensions with random values
    */
   public static boolean[][] generatePad(int width, int height) {
 

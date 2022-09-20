@@ -1,4 +1,6 @@
 /**
+ * Share exporter that persists visual shares as png images to disk.
+ *
  * @author Maximilian Schiedermeier
  */
 
@@ -10,8 +12,18 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+/**
+ * Helper class that transforms provided visual shares back to png format and persists them on
+ * disk.
+ */
 public class VisualShareExporter {
 
+  /**
+   * Transforms provided visual shares back to png format and persists them on disk.
+   *
+   * @param visualShare as the boosted, graphic version of a compact share.
+   * @param path        as the location on file system where the share is stored as png file.
+   */
   public static void exportVisualShare(boolean[][] visualShare, String path) {
 
     // set final dimensions
