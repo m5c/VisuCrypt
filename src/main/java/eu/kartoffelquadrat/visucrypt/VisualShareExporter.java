@@ -1,3 +1,7 @@
+/**
+ * @author Maximilian Schiedermeier
+ */
+
 package eu.kartoffelquadrat.visucrypt;
 
 import java.awt.Color;

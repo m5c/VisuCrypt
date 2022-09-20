@@ -1,50 +1,47 @@
+/**
+ * Random one time pad generator. Creates 2D one time pads of desired dimensions.
+ *
+ * @author Maximilian Schiedermeier
+ */
+
 package eu.kartoffelquadrat.visucrypt;
 
 import java.security.SecureRandom;
 
+/**
+ * Creates 2D one time pads of desired dimensions.
+ */
 public class OneTimePadGenerator {
-    /**
-     * creates a chunk
-     */
-    public static boolean[][] generatePad(int width, int height) {
 
-        boolean[][] result = new boolean[width][height];
-        SecureRandom random = new SecureRandom();
+  /**
+   * Random one time pad generator. Creates 2D one time pads of desired dimensions.
+   */
+  public static boolean[][] generatePad(int width, int height) {
 
-        // for each line. create as many random bytes as the line has elements ToDo: enhance later, one byte can generate multiple bools...
-        for(int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                // get a random boolean
-                byte[] bytes = new byte[1];
-                random.nextBytes(bytes);
+    boolean[][] result = new boolean[width][height];
+    SecureRandom random = new SecureRandom();
 
-                // add it at pads designated position
-                result[x][y] = booleanFromByte(bytes[0]);
-            }
-        }
-        return result;
+    // For each line. create as many random bytes as the line has elements
+    for (int y = 0; y < height; y++) {
+      for (int x = 0; x < width; x++) {
+        // get a random boolean
+        byte[] bytes = new byte[1];
+        random.nextBytes(bytes);
+
+        // add it at pads designated position
+        result[x][y] = booleanFromByte(bytes[0]);
+      }
     }
+    return result;
+  }
 
-    /*
-    //converts an array of bytes into a boolean array
-    public static boolean[] booleanArrayFromByteArray(byte[] x) {
-        boolean[] y = new boolean[x.length * 8];
-        int position = 0;
-        for (byte z : x) {
-            boolean[] temp = booleanArrayFromByte(z);
-            System.arraycopy(temp, 0, y, position, 8);
-            position += 8;
-        }
-        return y;
-    }*/
-
-    // converts one byte into an 4-sized boolean array
-    public static boolean booleanFromByte(byte x) {
-        //boolean bs[] = new boolean[1]; // TODO: can be extended -> later, for increased performance.
-        return ((x & 0x01) != 0);
-        //bs[1] = ((x & 0x02) != 0);
-        //bs[2] = ((x & 0x04) != 0);
-        //bs[3] = ((x & 0x08) != 0);
-        //return bs;
-    }
+  /**
+   * Strips a random byte value to a single bit value by extracting only the first position.
+   *
+   * @param b as a random input byte.
+   * @return a single bit value, which is the first bit of the provided input byte.
+   */
+  public static boolean booleanFromByte(byte b) {
+    return ((b & 0x01) != 0);
+  }
 }
