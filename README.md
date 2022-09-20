@@ -17,7 +17,7 @@ See [JavaDoc on GitHub pages](https://kartoffelquadrat.github.io/VisuCrypt/).
 
  * Compile the sources: ```mvn clean package```
  * Run the program: ```java -jar target/VisuCrypt.jar path/to/source/image.jpg``` or  
- ```clean package exec:java -Dexec.args=path/to/source/image.jpg```
+ ```mvn clean package exec:java -Dexec.args=path/to/source/image.jpg```
  * Print shares, generated to ```/tmp``` directory.
  * Place printed shares one on top of the other, hold agains a light source.
 
