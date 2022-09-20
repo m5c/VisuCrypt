@@ -10,7 +10,8 @@ Visual XOR based encryption with random one time pads.
 
 [Visual Cryptography](https://en.wikipedia.org/wiki/Visual_cryptography) is an approach to split information over image shares, where:
  * Every share by itself leaves no information about the content.
- * An image superposition (images printed on foil, stacked arrangement) reveals the original secret.  
+ * An image superposition (images printed on foil, stacked arrangement) reveals the original secret.
+ 
 This repository hosts an open source implementation.
 
 ## Documentation
