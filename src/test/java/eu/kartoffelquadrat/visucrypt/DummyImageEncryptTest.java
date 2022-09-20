@@ -78,8 +78,8 @@ public class DummyImageEncryptTest {
     }
 
     // finally clean up generated test shares
-//    share1File.delete();
-//    share2File.delete();
+    share1File.delete();
+    share2File.delete();
   }
 
   /**
