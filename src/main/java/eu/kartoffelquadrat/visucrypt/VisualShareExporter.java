@@ -38,7 +38,7 @@ public class VisualShareExporter {
         // All channels have same value (all three colours + alpha info)
         int channelValue = visualShare[x][y] ? 255 : 0;
         int level =
-            (255-channelValue << 24) | (channelValue << 16) | (channelValue << 8) | channelValue;
+            (255 - channelValue << 24) | (channelValue << 16) | (channelValue << 8) | channelValue;
         bufferedImage.setRGB(x, y, level);
       }
     }
