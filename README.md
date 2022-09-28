@@ -14,7 +14,17 @@ Visual XOR based encryption with random one time pads.
  
 This repository hosts an open source implementation.
 
-## Illustration
+## Illustrations
+
+ * The software first creates a downsampled, black&white abstraction of the input image. 
+ * Then it generates a random One-Time-Pad (OTP) and applies it to the abstraction to create two visual shares.  
+![sample](markdown-samples/sample.png)
+ * Perfect alignment of shares reveals the secret, while any other superposition tells nothing about the original.  
+![sample](markdown-samples/animated-overlay.gif)
+
+ > One Time Pads hide the original secret with random entropy. Decryption is not a question of copmutational power, since with only one share the set of potential secret inputs is infinite.
+
+## Algorithm
 
 Imagine a [2x2 test image](src/test/resources/test-image.png):  
 ![test-image](src/test/resources/test-image.png)
