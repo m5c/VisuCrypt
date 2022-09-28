@@ -22,7 +22,7 @@ This repository hosts an open source implementation.
  * Perfect alignment of shares reveals the secret, while any other superposition tells nothing about the original.  
 ![sample](markdown-samples/animated-overlay.gif)
 
- > One Time Pads hide a secret with random entropy. Decryption is not a question of computational power. Holding only one share, the set of potential outcomes is any possible image.
+ > One Time Pads hide a secret with random entropy. Decryption is not a question of computational power. Holding only one share, the set of potential outcomes contains any possible image.
 
 ## Algorithm
 
