@@ -5,6 +5,7 @@ Visual XOR based encryption with random one time pads.
 ![version](https://img.shields.io/badge/version-1.1-brightgreen)
 ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 ![building](https://img.shields.io/badge/build-passing-brightgreen)
+![checkstyle](https://img.shields.io/badge/checkstyle-goolge-blue)
 
 ## About
 
