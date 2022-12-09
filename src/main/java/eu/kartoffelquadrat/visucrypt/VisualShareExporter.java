@@ -23,6 +23,7 @@ public class VisualShareExporter {
    * @param visualShare as the boosted, graphic version of a compact share.
    * @param outputDir   as the location on file system where the share is stored as png file.
    * @param fileName    as the  name on disk to use for the persisted file.
+   * @param imageFormat as the desired export format for created shares.
    */
   public static void exportVisualShare(boolean[][] visualShare, File outputDir, String fileName,
                                        String imageFormat) {

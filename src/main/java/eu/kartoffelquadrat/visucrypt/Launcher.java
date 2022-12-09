@@ -15,12 +15,16 @@ import java.io.IOException;
  */
 public class Launcher {
 
+  // Use pdf or svg for best results.
+  // png and jpgs are rasterized formats that lead to dithering artefacts on upsacling and
+  // potentially lower quality of prints.
   public static final String OUTPUT_FORMAT = "png";
 
   /**
    * Main method consumes path to original image and stores to result images in tmp directory.
    *
-   * @param args location of input image as string encoding path to resource
+   * @param args location of input image as string encoding path to resource.
+   * @throws IOException in case reading or writing images from disk fails.
    */
   public static void main(String[] args) throws IOException {
 

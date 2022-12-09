@@ -26,6 +26,7 @@ public class BinaryImageLoader {
    *
    * @param imagePath as file object toward resource location. Can be absolute or relative.
    * @return 2D boolean array representing the images max-contrast grid, all pixels black/white.
+   * @throws IOException in case provided image paths cannot be accessed.
    */
   public static boolean[][] loadImage(File imagePath) throws IOException {
 

@@ -17,7 +17,8 @@ public class DummyImageEncryptTest {
 
   public static final String TEST_FILE = "src/test/resources/test-image.png";
   public static final String TARGET_DIR = "/tmp/";
-  public static final String[] SHARES = new String[] {"share1.png", "share2.png"};
+  public static final String[] SHARES =
+      new String[] {"share1." + Launcher.OUTPUT_FORMAT, "share2." + Launcher.OUTPUT_FORMAT};
 
 
   @Test
@@ -27,11 +28,13 @@ public class DummyImageEncryptTest {
     Launcher.main(new String[] {TEST_FILE, TARGET_DIR});
 
     // Verify output images exist in /tmp directory (expected target location)
-    File share1File = new File(TARGET_DIR + "share1.png");
-    File share2File = new File(TARGET_DIR + "share2.png");
-    Assert.assertTrue("Expected a test share at /tmp/share1.png, but the file does not exist.",
+    File share1File = new File(TARGET_DIR + "share1." + Launcher.OUTPUT_FORMAT);
+    File share2File = new File(TARGET_DIR + "share2." + Launcher.OUTPUT_FORMAT);
+    Assert.assertTrue("Expected a test share at /tmp/share1." + Launcher.OUTPUT_FORMAT +
+            ", but the file does not exist.",
         share1File.exists());
-    Assert.assertTrue("Expected a test share at /tmp/share2.png, but the file does not exist.",
+    Assert.assertTrue("Expected a test share at /tmp/share2." + Launcher.OUTPUT_FORMAT+
+        ", but the file does not exist.",
         share2File.exists());
 
     // Verify shares have double dimensions of sample image

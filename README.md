@@ -53,6 +53,8 @@ See [JavaDoc on GitHub pages](https://kartoffelquadrat.github.io/VisuCrypt/).
  * Print shares, generated next to source image as ```share1.png```, ```share2.png```.
  * Place printed shares one on top of the other, hold against a light source.
 
+ > Note: For printing on foil (US letter sized): An input image of 180x180 pixels, 72 pixels per inch are reasonable reference values for most printers.
+
 ## License
 
 [MIT](LICENSE)
