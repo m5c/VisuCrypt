@@ -53,6 +53,9 @@ See [JavaDoc on GitHub pages](https://kartoffelquadrat.github.io/VisuCrypt/).
  * Print shares, generated next to source image as ```share1.png```, ```share2.png```.
  * Place printed shares one on top of the other, hold against a light source.
 
+ > Note: good PNG input size is ~180x180. Most printer progrems upscale with dithering (ugly). Prevent that with a manual upscale that quadruples every pixel:  
+```convert share.png -filter point -resize 400% upscaledshare.png``` (imagemagick)
+
 ## License
 
 [MIT](LICENSE)
