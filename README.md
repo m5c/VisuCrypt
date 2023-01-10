@@ -43,7 +43,7 @@ Running this library will create a random one time pad and apply it to the test 
 
 ## Documentation
 
-See [JavaDoc on GitHub pages](https://kartoffelquadrat.github.io/VisuCrypt/).
+See [JavaDoc on GitHub pages](https://m5c.github.io/VisuCrypt/).
 
 ## Usage
 
